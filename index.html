@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Once Human攻略ナビ｜初心者から最新攻略まで</title>
+
+<title>Once Human攻略ナビ｜初心者・武器・デビエーション・最新情報</title>
 
 <style>
 * {
@@ -18,97 +19,119 @@ body {
     "Segoe UI",
     "Noto Sans JP",
     sans-serif;
-  background: #0b0f12;
-  color: #e8edf0;
+  background: #080d0f;
+  color: #e7eeee;
   line-height: 1.8;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 header {
   background:
-    linear-gradient(135deg, #11191e, #17251d);
-  border-bottom: 1px solid #26352c;
+    linear-gradient(135deg, #101a15, #0b1215 60%, #16251a);
+  border-bottom: 1px solid #2c4031;
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
-  padding: 28px 20px;
+  padding: 28px 20px 22px;
 }
 
 .logo {
   font-size: 30px;
   font-weight: 800;
-  color: #b9ff65;
+  color: #c6ff76;
 }
 
 .subtitle {
-  color: #9da8ad;
-  margin-top: 4px;
+  color: #99a6aa;
+  margin-top: 3px;
 }
 
 nav {
-  margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 nav button {
-  background: #18221c;
-  border: 1px solid #304335;
+  background: #16211a;
   color: #dce8df;
-  padding: 8px 15px;
+  border: 1px solid #314535;
   border-radius: 8px;
-  cursor: pointer;
+  padding: 8px 14px;
 }
 
 nav button:hover {
-  background: #243529;
+  background: #24372a;
+  border-color: #658557;
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
-  padding: 30px 20px 60px;
+  padding: 28px 20px 70px;
 }
 
 .search {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .search input {
   width: 100%;
-  padding: 15px;
-  background: #11171a;
-  border: 1px solid #2d383d;
-  border-radius: 10px;
+  background: #11181b;
   color: white;
-  font-size: 16px;
+  border: 1px solid #303c41;
+  border-radius: 10px;
+  padding: 15px 16px;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #9bcf61;
 }
 
 .hero {
   background:
-    linear-gradient(135deg, #18271d, #101719);
-  border: 1px solid #2d4433;
+    radial-gradient(circle at top right, #27402b 0, transparent 40%),
+    linear-gradient(135deg, #15241b, #0e1619);
+  border: 1px solid #304735;
   border-radius: 16px;
   padding: 30px;
   margin-bottom: 35px;
 }
 
 .hero h1 {
+  color: #d1ff8c;
   margin-top: 0;
-  color: #c8ff80;
+  font-size: 30px;
+}
+
+.hero p {
+  color: #c0cacc;
+}
+
+.notice {
+  background: #17201d;
+  border-left: 4px solid #b9f16c;
+  padding: 13px 16px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .section-title {
-  margin-top: 45px;
-  border-left: 4px solid #b9ff65;
+  border-left: 4px solid #b9f16c;
   padding-left: 12px;
+  margin: 40px 0 18px;
 }
 
 .categories {
@@ -118,102 +141,133 @@ main {
 }
 
 .category {
-  background: #11171a;
-  border: 1px solid #273238;
+  background: #101719;
+  border: 1px solid #283438;
   border-radius: 12px;
-  padding: 18px;
-  cursor: pointer;
-  transition: 0.2s;
+  padding: 19px;
+  transition: .2s;
 }
 
 .category:hover {
   transform: translateY(-3px);
-  border-color: #83b75b;
+  border-color: #7ca55d;
+  background: #141d1a;
 }
 
 .category h3 {
   margin-top: 0;
-  color: #c8ff80;
+  color: #d0f89b;
+}
+
+.category p {
+  color: #a8b3b6;
+  margin-bottom: 0;
 }
 
 .articles {
   display: grid;
-  gap: 15px;
+  gap: 14px;
 }
 
 .article {
-  background: #11171a;
-  border: 1px solid #273238;
+  background: #101719;
+  border: 1px solid #283438;
   border-radius: 12px;
   padding: 20px;
 }
 
+.article:hover {
+  border-color: #52635a;
+}
+
 .article h3 {
-  margin-top: 0;
-  color: #f0f5f2;
+  margin: 5px 0;
+}
+
+.article p {
+  color: #aeb9bc;
 }
 
 .tag {
   display: inline-block;
-  background: #203124;
-  color: #b9ff65;
+  background: #213323;
+  color: #baf378;
   border-radius: 20px;
   padding: 3px 10px;
   font-size: 12px;
-  margin-bottom: 8px;
+}
+
+.date {
+  color: #778286;
+  font-size: 13px;
 }
 
 .read {
-  margin-top: 12px;
-  display: inline-block;
-  background: #b9ff65;
-  color: #101510;
+  margin-top: 10px;
+  background: #b9f16c;
+  color: #10150f;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 15px;
   border-radius: 7px;
-  cursor: pointer;
   font-weight: bold;
+}
+
+.read:hover {
+  background: #d2ff95;
 }
 
 .detail {
   display: none;
-  background: #101619;
-  border: 1px solid #334148;
+  background: #0f1619;
+  border: 1px solid #303c40;
   border-radius: 14px;
-  padding: 28px;
-  margin-top: 25px;
+  padding: 30px;
 }
 
 .detail h2 {
-  color: #c8ff80;
+  color: #d0ff8d;
 }
 
 .detail h3 {
-  color: #dcefcf;
-  margin-top: 25px;
+  color: #d7e8da;
+  margin-top: 28px;
+}
+
+.detail p,
+.detail li {
+  color: #bdc7ca;
+}
+
+.detail ul {
+  padding-left: 22px;
 }
 
 .back {
-  background: #263239;
+  background: #273238;
   color: white;
   border: none;
-  padding: 9px 15px;
   border-radius: 7px;
-  cursor: pointer;
+  padding: 9px 15px;
   margin-bottom: 20px;
 }
 
-.notice {
-  background: #171f22;
-  border-left: 4px solid #b9ff65;
+.source-box {
+  background: #141d20;
+  border: 1px solid #2d3b40;
+  border-radius: 10px;
   padding: 15px;
-  margin: 20px 0;
+  margin-top: 25px;
+  color: #aeb8bb;
+}
+
+.source-box strong {
+  color: #d5e4d7;
 }
 
 footer {
-  border-top: 1px solid #263238;
-  color: #8e999e;
+  border-top: 1px solid #273338;
   text-align: center;
+  color: #788489;
   padding: 30px 20px;
 }
 
@@ -222,12 +276,12 @@ footer {
     font-size: 24px;
   }
 
-  .hero {
-    padding: 22px;
+  main {
+    padding: 20px 14px 55px;
   }
 
-  main {
-    padding: 20px 14px 50px;
+  .hero {
+    padding: 22px;
   }
 }
 </style>
@@ -237,7 +291,9 @@ footer {
 
 <header>
   <div class="header-inner">
+
     <div class="logo">☣️ Once Human攻略ナビ</div>
+
     <div class="subtitle">
       Once Humanを日本語でわかりやすく攻略
     </div>
@@ -250,7 +306,9 @@ footer {
       <button onclick="filterCategory('建築・領地')">建築・領地</button>
       <button onclick="filterCategory('探索・素材')">探索・素材</button>
       <button onclick="filterCategory('ボス攻略')">ボス攻略</button>
+      <button onclick="filterCategory('最新情報')">最新情報</button>
     </nav>
+
   </div>
 </header>
 
@@ -268,17 +326,19 @@ footer {
   <section id="home">
 
     <div class="hero">
+
       <h1>Once Human攻略ナビ</h1>
 
       <p>
-        Once Humanの初心者攻略から武器・ビルド、
-        デビエーション、建築、探索、ボス攻略まで
-        わかりやすくまとめていきます。
+        Once Humanの初心者攻略から、
+        武器・ビルド、デビエーション、建築、探索、
+        ボス攻略、最新アップデート情報までまとめています。
       </p>
 
       <div class="notice">
-        📌 このサイトは攻略記事を順次追加していく予定です。
+        📌 最新情報は公式発表を確認しながら順次更新していきます。
       </div>
+
     </div>
 
     <h2 class="section-title">攻略カテゴリ</h2>
@@ -287,37 +347,42 @@ footer {
 
       <div class="category" onclick="filterCategory('初心者攻略')">
         <h3>🔰 初心者攻略</h3>
-        <p>ゲーム開始後にやることや序盤の進め方。</p>
+        <p>ゲーム開始直後の進め方や基本システム。</p>
       </div>
 
       <div class="category" onclick="filterCategory('武器・ビルド')">
         <h3>⚔️ 武器・ビルド</h3>
-        <p>武器選びや装備、ビルドの基本。</p>
+        <p>武器選び、装備、ビルドの基本。</p>
       </div>
 
       <div class="category" onclick="filterCategory('デビエーション')">
         <h3>👾 デビエーション</h3>
-        <p>デビエーションの基本や活用方法。</p>
+        <p>入手方法や能力、活用方法を解説。</p>
       </div>
 
       <div class="category" onclick="filterCategory('建築・領地')">
         <h3>🏠 建築・領地</h3>
-        <p>拠点作りや領地について解説。</p>
+        <p>拠点、収納、クラフト設備などを攻略。</p>
       </div>
 
       <div class="category" onclick="filterCategory('探索・素材')">
         <h3>🗺️ 探索・素材</h3>
-        <p>探索、採取、素材集めの攻略。</p>
+        <p>探索や素材集めを効率よく進める方法。</p>
       </div>
 
       <div class="category" onclick="filterCategory('ボス攻略')">
         <h3>👹 ボス攻略</h3>
-        <p>強敵やボスとの戦い方を解説。</p>
+        <p>ボス戦の基本や立ち回りを解説。</p>
+      </div>
+
+      <div class="category" onclick="filterCategory('最新情報')">
+        <h3>📰 最新情報</h3>
+        <p>アップデートや公式発表をチェック。</p>
       </div>
 
     </div>
 
-    <h2 class="section-title">最新攻略記事</h2>
+    <h2 class="section-title">攻略記事</h2>
 
     <div id="articleList" class="articles"></div>
 
@@ -339,86 +404,83 @@ const articles = [
 {
   title: "Once Human｜初心者が最初にやること",
   category: "初心者攻略",
+  date: "初心者向け",
   text: `
     <h2>Once Human｜初心者が最初にやること</h2>
 
     <p>
       Once Humanを始めたばかりの人向けに、
-      序盤で覚えておきたい基本をまとめます。
+      最初に覚えておきたい基本をまとめます。
     </p>
 
-    <h3>1. まずはメインミッションを進める</h3>
+    <h3>1. メインミッションを進める</h3>
 
     <p>
-      最初はマップを無理に隅々まで探索するより、
-      メインミッションを進めながらゲームシステムを覚えるのがおすすめです。
+      序盤はメインミッションを軸に進めると、
+      ゲームの基本的なシステムを覚えやすくなります。
     </p>
 
     <h3>2. 素材を集める</h3>
 
     <p>
-      木材や鉱石など、フィールドで入手できる素材は
-      建築やクラフトなどで使用します。
+      フィールドを移動するときは、木材や鉱石など
+      必要になりそうな素材も集めておきましょう。
     </p>
 
-    <h3>3. 拠点を作る</h3>
+    <h3>3. 拠点を整える</h3>
 
     <p>
-      拠点はアイテムの保管やクラフトなど、
-      サバイバル生活の中心になります。
+      拠点は収納やクラフトなどの中心になります。
+      最初は必要な設備から少しずつ整えれば十分です。
     </p>
 
-    <h3>4. 装備を更新する</h3>
+    <h3>4. 装備を確認する</h3>
 
     <p>
-      序盤は入手した武器や装備を確認しながら、
-      より使いやすいものへ更新していきましょう。
+      新しい武器や装備を入手したら、
+      現在使っている装備と比較しましょう。
     </p>
 
-    <h3>5. デビエーションを活用する</h3>
+    <h3>5. デビエーションを覚える</h3>
 
     <p>
-      デビエーションはOnce Humanを攻略するうえで
-      重要な要素のひとつです。
+      デビエーションはOnce Humanの重要な要素です。
+      入手したものの能力や用途を確認しておきましょう。
     </p>
-
-    <div class="notice">
-      💡 最初はすべてを理解する必要はありません。
-      メインミッションを進めながら少しずつ覚えていきましょう。
-    </div>
   `
 },
 
 {
   title: "Once Human｜序盤の効率的な進め方",
   category: "初心者攻略",
+  date: "初心者向け",
   text: `
     <h2>Once Human｜序盤の効率的な進め方</h2>
 
     <p>
-      序盤は「探索」「素材集め」「クラフト」「装備更新」
-      をバランスよく進めることが重要です。
+      序盤はメインミッションだけを急いで進めるより、
+      探索や素材集めも組み合わせると進めやすくなります。
     </p>
 
     <h3>メインミッションを軸にする</h3>
 
     <p>
-      メインミッションを進めることで、
-      新しい要素やエリアを確認しやすくなります。
+      まずは目的地へ向かいながら、
+      周囲の素材やアイテムも確認しましょう。
     </p>
 
-    <h3>素材は見つけたら回収</h3>
+    <h3>素材を集めながら移動する</h3>
 
     <p>
-      拠点に戻ったあとに素材が足りなくなることがあるため、
-      移動中に必要そうな素材を集めておくと便利です。
+      拠点に戻ってから素材不足に気付くことを減らすため、
+      道中で必要な素材を集めておくと便利です。
     </p>
 
-    <h3>装備は定期的に確認</h3>
+    <h3>無理な戦闘を避ける</h3>
 
     <p>
-      新しい武器や装備を入手したら、
-      現在使っているものと比較しましょう。
+      すべての敵と戦う必要はありません。
+      目的地への移動を優先する判断も大切です。
     </p>
   `
 },
@@ -426,32 +488,34 @@ const articles = [
 {
   title: "Once Human｜武器選びの基本",
   category: "武器・ビルド",
+  date: "武器攻略",
   text: `
     <h2>Once Human｜武器選びの基本</h2>
 
     <p>
-      武器は自分の戦い方に合ったものを選ぶことが大切です。
+      武器選びでは、単純な性能だけではなく、
+      自分が扱いやすいかどうかも重要です。
     </p>
 
-    <h3>近距離で戦う</h3>
+    <h3>近距離で戦いたい場合</h3>
 
     <p>
-      敵との距離を詰めて戦うスタイルでは、
-      近距離で扱いやすい武器を選ぶと戦いやすくなります。
+      敵との距離を詰めて戦うのが好きなら、
+      近距離で扱いやすい武器を試してみましょう。
     </p>
 
-    <h3>距離を取って戦う</h3>
+    <h3>距離を取って戦いたい場合</h3>
 
     <p>
-      敵との距離を維持して戦いたい場合は、
+      安全な距離を維持したい場合は、
       遠距離から攻撃できる武器が候補になります。
     </p>
 
-    <h3>まずは使いやすさを優先</h3>
+    <h3>最初は使いやすさを優先</h3>
 
     <p>
-      最初から細かいビルドを完璧に考える必要はありません。
-      実際に使ってみて、自分に合う武器を探していきましょう。
+      序盤から完璧なビルドを作る必要はありません。
+      実際に使ってみて、自分に合う武器を探しましょう。
     </p>
   `
 },
@@ -459,33 +523,27 @@ const articles = [
 {
   title: "Once Human｜デビエーションの基本",
   category: "デビエーション",
+  date: "基本攻略",
   text: `
     <h2>Once Human｜デビエーションの基本</h2>
 
     <p>
-      デビエーションはOnce Humanを特徴づける重要な要素です。
+      デビエーションはOnce Humanの攻略で重要な存在です。
+      入手したら能力や用途を確認しましょう。
     </p>
 
-    <h3>デビエーションとは？</h3>
+    <h3>能力を確認する</h3>
 
     <p>
-      特殊な能力を持つ存在で、
-      探索や戦闘、拠点での活動などに関係します。
+      デビエーションによって役割が異なるため、
+      自分のプレイスタイルに合うものを探すことが大切です。
     </p>
 
-    <h3>入手したら確認する</h3>
+    <h3>戦闘以外にも注目</h3>
 
     <p>
-      新しいデビエーションを入手したら、
-      能力や用途を確認しておきましょう。
-    </p>
-
-    <h3>自分のプレイスタイルに合わせる</h3>
-
-    <p>
-      戦闘を重視するのか、
-      拠点での活動を重視するのかによって、
-      活用方法を考えていくとよいでしょう。
+      デビエーションにはさまざまな用途があります。
+      戦闘だけでなく拠点での活用方法も確認してみましょう。
     </p>
   `
 },
@@ -493,51 +551,67 @@ const articles = [
 {
   title: "Once Human｜拠点・建築の基本",
   category: "建築・領地",
+  date: "建築攻略",
   text: `
     <h2>Once Human｜拠点・建築の基本</h2>
 
     <p>
-      拠点はクラフトやアイテム管理などの中心になります。
+      拠点はアイテム管理やクラフトなどの中心になります。
     </p>
 
-    <h3>最初はシンプルでOK</h3>
+    <h3>最初は小さく作る</h3>
 
     <p>
-      序盤から巨大な建築物を作る必要はありません。
-      必要な設備を少しずつ整えていきましょう。
+      最初から大規模な建築をする必要はありません。
+      必要な設備を優先して配置しましょう。
     </p>
 
-    <h3>収納を意識する</h3>
+    <h3>収納を整理する</h3>
 
     <p>
-      攻略を進めるほどアイテムが増えるため、
-      収納場所を確保しておくと便利です。
+      攻略が進むほどアイテムが増えるため、
+      収納を整理しておくと管理しやすくなります。
     </p>
+
+    <h3>収納検索機能にも注目</h3>
+
+    <p>
+      V3.0.5では収納箱や収納ターミナルを検索できる
+      「Search」機能が追加されています。
+      大量のアイテムを管理するときに役立つ機能です。
+    </p>
+
+    <div class="source-box">
+      <strong>公式情報：</strong>
+      V3.0.5アップデートで収納検索機能が追加されました。
+    </div>
   `
 },
 
 {
   title: "Once Human｜探索と素材集めの基本",
   category: "探索・素材",
+  date: "探索攻略",
   text: `
     <h2>Once Human｜探索と素材集めの基本</h2>
 
     <p>
-      Once Humanではフィールド探索が攻略の重要な要素です。
+      フィールド探索では、目的地だけでなく
+      周辺の建物や素材にも目を向けましょう。
     </p>
 
     <h3>移動中に素材を集める</h3>
 
     <p>
-      目的地へ向かうだけではなく、
-      道中の素材も確認しておきましょう。
+      必要な素材を見つけたら、
+      後で取りに戻る手間を減らすために回収しておくと便利です。
     </p>
 
-    <h3>必要な素材を覚える</h3>
+    <h3>探索した場所を覚える</h3>
 
     <p>
-      建築やクラフトを進めると必要な素材が増えていきます。
-      足りない素材は場所を覚えておくと効率的です。
+      よく使う素材が見つかった場所は覚えておくと、
+      後から素材を集めるときに役立ちます。
     </p>
   `
 },
@@ -545,53 +619,57 @@ const articles = [
 {
   title: "Once Human｜ボス戦の基本",
   category: "ボス攻略",
+  date: "ボス攻略",
   text: `
     <h2>Once Human｜ボス戦の基本</h2>
 
     <p>
-      ボス戦では攻撃することだけでなく、
-      敵の攻撃を見ながら安全に戦うことも重要です。
+      ボス戦では攻撃するだけでなく、
+      敵の攻撃パターンを見ながら戦うことが重要です。
     </p>
 
-    <h3>敵の攻撃パターンを見る</h3>
+    <h3>攻撃パターンを見る</h3>
 
     <p>
-      いきなり攻撃を連発するのではなく、
-      敵がどのような攻撃をしてくるのか確認しましょう。
+      初見では敵の攻撃を観察し、
+      攻撃後の隙などを確認しましょう。
     </p>
 
-    <h3>回復や補給を準備する</h3>
+    <h3>準備してから挑戦する</h3>
 
     <p>
-      長期戦になる可能性がある場合は、
-      必要なアイテムを事前に確認しておきましょう。
+      武器や装備、必要なアイテムを確認してから
+      ボス戦に挑戦しましょう。
     </p>
   `
 },
 
 {
-  title: "Once Human｜初心者が覚えておきたい探索のコツ",
+  title: "Once Human｜初心者向け探索のコツ",
   category: "初心者攻略",
+  date: "初心者向け",
   text: `
-    <h2>Once Human｜初心者が覚えておきたい探索のコツ</h2>
+    <h2>Once Human｜初心者向け探索のコツ</h2>
 
-    <p>
-      探索するときは、目的地だけを見るのではなく、
-      周囲の建物やアイテムなども確認しましょう。
-    </p>
-
-    <h3>無理に敵と戦わない</h3>
+    <h3>敵と戦うか判断する</h3>
 
     <p>
       すべての敵を倒す必要はありません。
-      状況によっては移動を優先することも重要です。
+      危険な場所では移動を優先するのも選択肢です。
     </p>
 
-    <h3>帰還するタイミングを考える</h3>
+    <h3>アイテムを整理する</h3>
 
     <p>
-      所持アイテムが増えてきたら、
-      拠点に戻って整理するのもおすすめです。
+      所持品がいっぱいになってきたら、
+      拠点に戻って収納を整理しましょう。
+    </p>
+
+    <h3>周囲を確認する</h3>
+
+    <p>
+      建物や探索ポイントを見落とさないよう、
+      周囲を確認しながら進みましょう。
     </p>
   `
 },
@@ -599,57 +677,115 @@ const articles = [
 {
   title: "Once Human｜装備更新の考え方",
   category: "武器・ビルド",
+  date: "装備攻略",
   text: `
     <h2>Once Human｜装備更新の考え方</h2>
 
     <p>
       新しい装備を手に入れたら、
-      単純に新しいものへ交換するのではなく、
-      性能や使いやすさを比較しましょう。
+      現在の装備と性能を比較しましょう。
     </p>
 
-    <h3>武器だけでなく装備全体を見る</h3>
+    <h3>武器だけで判断しない</h3>
 
     <p>
-      戦闘では武器だけでなく、
-      防具などを含めた装備全体を確認することが大切です。
+      武器だけでなく、防具などを含めて
+      自分の戦い方に合っているか確認しましょう。
     </p>
 
-    <h3>自分の戦い方に合わせる</h3>
+    <h3>実際に使ってみる</h3>
 
     <p>
-      自分がよく使う距離や攻撃方法に合わせて、
-      装備を調整していきましょう。
+      数値だけでは分からない使いやすさもあります。
+      実際の戦闘で試すことも大切です。
     </p>
   `
 },
 
 {
-  title: "Once Human｜初心者向け攻略まとめ",
-  category: "初心者攻略",
+  title: "Once Human｜最新アップデート情報まとめ",
+  category: "最新情報",
+  date: "2026年9月",
   text: `
-    <h2>Once Human｜初心者向け攻略まとめ</h2>
+    <h2>Once Human｜最新アップデート情報まとめ</h2>
 
     <p>
-      Once Humanを始めたばかりなら、
-      まずはゲームの基本システムを覚えることから始めましょう。
+      Once Humanでは継続的にアップデートや修正が行われています。
+      最新情報を確認してから攻略することが大切です。
     </p>
 
-    <h3>まず覚えたいこと</h3>
-
-    <ul>
-      <li>メインミッションを進める</li>
-      <li>素材を集める</li>
-      <li>拠点を整える</li>
-      <li>装備を更新する</li>
-      <li>デビエーションを活用する</li>
-      <li>探索しながらゲームシステムを覚える</li>
-    </ul>
+    <h3>V3.0.5で収納検索機能を追加</h3>
 
     <p>
-      慣れてきたら、武器・ビルドやボス攻略など、
-      より専門的な攻略へ進んでいきましょう。
+      V3.0.5では、収納箱や収納ターミナルに
+      アイテムを検索する機能が追加されました。
     </p>
+
+    <h3>9月17日のアップデート予定</h3>
+
+    <p>
+      公式日本語サイトでは、2026年9月17日のアップデートで
+      ジョブシステムの大規模な変更が案内されています。
+    </p>
+
+    <h3>動物騎乗</h3>
+
+    <p>
+      テイマー職業のリニューアルに伴い、
+      「動物騎乗」能力が追加される予定です。
+      動物の召喚・騎乗・育成などを中心とした変更が案内されています。
+    </p>
+
+    <h3>今後も最新情報を更新</h3>
+
+    <p>
+      アップデート後は実際のゲーム内仕様を確認しながら、
+      このページの攻略情報も更新していきます。
+    </p>
+
+    <div class="source-box">
+      <strong>公式情報：</strong>
+      2026年9月12日公開の開発者ブルーポストをもとにしています。
+    </div>
+  `
+},
+
+{
+  title: "Once Human｜V3.0.5アップデートで変わったこと",
+  category: "最新情報",
+  date: "V3.0.5",
+  text: `
+    <h2>Once Human｜V3.0.5アップデートで変わったこと</h2>
+
+    <p>
+      V3.0.5では、さまざまな機能追加や調整が行われました。
+    </p>
+
+    <h3>収納検索</h3>
+
+    <p>
+      収納箱や収納ターミナルに検索機能が追加され、
+      必要なアイテムを探しやすくなりました。
+    </p>
+
+    <h3>そのほかの調整</h3>
+
+    <p>
+      コスチューム関連の調整や、
+      RaidZoneへの携帯製作機能追加なども公式に案内されています。
+    </p>
+
+    <h3>不具合修正も継続中</h3>
+
+    <p>
+      V3.0.5では9月に入ってからも複数回の
+      不具合修正が行われています。
+    </p>
+
+    <div class="source-box">
+      <strong>公式情報：</strong>
+      Once Human公式V3.0.5アップデート情報をもとにしています。
+    </div>
   `
 }
 
@@ -668,7 +804,7 @@ function renderArticles(list) {
     return;
   }
 
-  list.forEach((article, index) => {
+  list.forEach((article) => {
 
     const div = document.createElement("div");
 
@@ -677,6 +813,7 @@ function renderArticles(list) {
     div.innerHTML = `
       <div class="tag">${article.category}</div>
       <h3>${article.title}</h3>
+      <div class="date">${article.date}</div>
       <p>Once Humanの攻略情報をわかりやすく解説します。</p>
       <button class="read" onclick="openArticle(${articles.indexOf(article)})">
         記事を読む
@@ -696,7 +833,10 @@ function openArticle(index) {
   detail.style.display = "block";
 
   detail.innerHTML = `
-    <button class="back" onclick="showHome()">← 記事一覧に戻る</button>
+    <button class="back" onclick="showHome()">
+      ← 記事一覧に戻る
+    </button>
+
     ${articles[index].text}
   `;
 
@@ -722,16 +862,18 @@ function showHome() {
 
 function filterCategory(category) {
 
-  currentArticles = articles.filter(
-    article => article.category === category
-  );
+  currentArticles =
+    articles.filter(article =>
+      article.category === category
+    );
 
-  document.getElementById("home").style.display = "block";
   document.getElementById("detail").style.display = "none";
 
-  renderArticles(currentArticles);
+  document.getElementById("home").style.display = "block";
 
   document.getElementById("search").value = "";
+
+  renderArticles(currentArticles);
 
   window.scrollTo({
     top: 0,
@@ -745,12 +887,11 @@ function searchArticles() {
     document.getElementById("search").value
     .toLowerCase();
 
-  currentArticles = articles.filter(article =>
-
-    article.title.toLowerCase().includes(keyword) ||
-    article.category.toLowerCase().includes(keyword)
-
-  );
+  currentArticles =
+    articles.filter(article =>
+      article.title.toLowerCase().includes(keyword) ||
+      article.category.toLowerCase().includes(keyword)
+    );
 
   renderArticles(currentArticles);
 }
