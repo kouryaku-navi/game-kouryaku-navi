@@ -3,151 +3,602 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAME攻略ナビ</title>
+
+<title>Once Human攻略ナビ｜初心者・武器・デビエーション・建築攻略</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans JP",sans-serif;background:#f5f7fb;color:#222}
-header{background:#202938;color:white;padding:22px 16px}
-.header-inner{max-width:1000px;margin:auto}
-header h1{margin:0 0 8px;font-size:28px}
-header p{margin:0;color:#cbd5e1}
-main{max-width:1000px;margin:30px auto;padding:0 16px}
-.search{background:white;padding:20px;border-radius:14px;margin-bottom:25px;box-shadow:0 2px 10px #00000010}
-.search input{width:100%;padding:14px;border:1px solid #ddd;border-radius:8px;font-size:16px}
-h2{margin-top:30px}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 10px #00000010}
-.card h3{margin-top:0;font-size:21px}
-.card p{color:#666}
-.button{display:inline-block;background:#2563eb;color:white;padding:10px 15px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
-.articles{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 10px #00000010}
-.article{padding:15px 0;border-bottom:1px solid #eee}
-.article:last-child{border-bottom:0}
-.article h3{margin:0 0 5px}
-.article p{margin:0;color:#666}
-#detail{display:none;background:white;border-radius:14px;padding:25px;box-shadow:0 2px 10px #00000010;margin-top:25px}
-footer{text-align:center;padding:35px 16px;color:#777}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,"Noto Sans JP",sans-serif;
+background:#f4f6f8;
+color:#222;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(135deg,#111827,#263449);
+color:white;
+padding:28px 16px;
+}
+
+.header-inner{
+max-width:1100px;
+margin:auto;
+}
+
+header h1{
+margin:0;
+font-size:30px;
+}
+
+header p{
+margin:5px 0 0;
+color:#cbd5e1;
+}
+
+nav{
+background:#182230;
+overflow-x:auto;
+white-space:nowrap;
+}
+
+nav .nav-inner{
+max-width:1100px;
+margin:auto;
+}
+
+nav a{
+display:inline-block;
+padding:14px 16px;
+color:white;
+text-decoration:none;
+}
+
+nav a:hover{
+background:#334155;
+}
+
+main{
+max-width:1100px;
+margin:30px auto;
+padding:0 16px;
+}
+
+.search{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 3px 12px #00000012;
+margin-bottom:30px;
+}
+
+.search input{
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+border-radius:9px;
+font-size:16px;
+}
+
+h2{
+margin-top:35px;
+}
+
+.games{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:14px;
+box-shadow:0 3px 12px #00000012;
+}
+
+.card h3{
+margin-top:0;
+font-size:20px;
+}
+
+.card p{
+color:#666;
+}
+
+.button{
+display:inline-block;
+border:0;
+background:#2563eb;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+}
+
+.button:hover{
+background:#1d4ed8;
+}
+
+.news{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 3px 12px #00000012;
+}
+
+.news-item{
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.news-item:last-child{
+border-bottom:0;
+}
+
+.news-item h3{
+margin:0 0 5px;
+}
+
+.category{
+display:inline-block;
+background:#e5e7eb;
+padding:3px 8px;
+border-radius:5px;
+font-size:12px;
+margin-bottom:5px;
+}
+
+#detail{
+display:none;
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 3px 12px #00000012;
+margin-top:30px;
+}
+
+.guide{
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.guide:last-child{
+border-bottom:0;
+}
+
+footer{
+margin-top:50px;
+padding:35px 16px;
+background:#111827;
+color:#cbd5e1;
+text-align:center;
+}
+
+@media(max-width:600px){
+
+header h1{
+font-size:24px;
+}
+
+main{
+margin-top:20px;
+}
+
+.card{
+padding:18px;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
+
 <div class="header-inner">
-<h1>🎮 GAME攻略ナビ</h1>
-<p>ゲーム攻略情報をわかりやすくまとめます</p>
+
+<h1>☣️ Once Human攻略ナビ</h1>
+
+<p>Once Humanの攻略情報をわかりやすくまとめる攻略サイト</p>
+
 </div>
+
 </header>
+
+
+<nav>
+
+<div class="nav-inner">
+
+<a href="#" onclick="goTop()">トップ</a>
+
+<a href="#guides">初心者攻略</a>
+
+<a href="#categories">攻略カテゴリ</a>
+
+<a href="#news">最新情報</a>
+
+</div>
+
+</nav>
+
 
 <main>
 
+
 <div class="search">
-<input id="search" type="text" placeholder="🔍 ゲーム名や攻略情報を検索..." oninput="searchGames()">
+
+<input
+id="search"
+type="text"
+placeholder="🔍 攻略情報を検索..."
+oninput="searchGuides()"
+>
+
 </div>
 
-<h2>🎮 ゲーム一覧</h2>
 
-<div class="games" id="gameList"></div>
+<section id="guides">
+
+<h2>🌱 初心者向け攻略</h2>
+
+<div class="games" id="guideList"></div>
+
+</section>
+
+
+<section id="categories">
+
+<h2>📚 攻略カテゴリ</h2>
+
+<div class="games">
+
+<div class="card">
+
+<h3>🔫 武器・ビルド</h3>
+
+<p>
+武器の特徴、ビルド、装備構成などをまとめます。
+</p>
+
+<button class="button" onclick="showCategory('武器・ビルド')">
+攻略を見る
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧬 デビエーション</h3>
+
+<p>
+デビエーションの入手方法やおすすめをまとめます。
+</p>
+
+<button class="button" onclick="showCategory('デビエーション')">
+攻略を見る
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏠 建築・領地</h3>
+
+<p>
+拠点建築、領地、施設などの情報をまとめます。
+</p>
+
+<button class="button" onclick="showCategory('建築・領地')">
+攻略を見る
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🗺️ マップ・探索</h3>
+
+<p>
+マップ、探索、宝箱、素材などの情報をまとめます。
+</p>
+
+<button class="button" onclick="showCategory('マップ・探索')">
+攻略を見る
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>👹 ボス・ダンジョン</h3>
+
+<p>
+ボスやダンジョンの攻略情報をまとめます。
+</p>
+
+<button class="button" onclick="showCategory('ボス・ダンジョン')">
+攻略を見る
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>📦 アイテム・素材</h3>
+
+<p>
+素材、アイテム、クラフト関連の情報をまとめます。
+</p>
+
+<button class="button" onclick="showCategory('アイテム・素材')">
+攻略を見る
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="news">
+
+<h2>🆕 最新情報</h2>
+
+<div class="news">
+
+<div class="news-item">
+
+<span class="category">アップデート</span>
+
+<h3>キャラクタークラスの大型調整</h3>
+
+<p>
+Beastmasterなどのクラスシステムに関する最新情報を掲載予定。
+</p>
+
+</div>
+
+
+<div class="news-item">
+
+<span class="category">サーバー</span>
+
+<h3>永久シナリオサーバー統合</h3>
+
+<p>
+永久サーバーの統合に関する公式情報を掲載予定。
+</p>
+
+</div>
+
+
+<div class="news-item">
+
+<span class="category">初心者</span>
+
+<h3>Once Humanを始めたら最初にやること</h3>
+
+<p>
+序盤の進め方や基本システムをわかりやすく解説します。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 
 <div id="detail"></div>
 
-<h2>🆕 最新攻略記事</h2>
-
-<div class="articles" id="articleList"></div>
 
 </main>
 
+
 <footer>
-GAME攻略ナビ
+
+Once Human攻略ナビ<br>
+ゲーム攻略情報をわかりやすくまとめるサイト
+
 </footer>
+
 
 <script>
 
-const games = [
+
+const guides = [
 
 {
-name:"サンプルRPG",
-description:"攻略・ボス・装備・アイテム",
-articles:[
-"序盤の進め方",
-"ボス攻略",
-"おすすめ装備"
-]
+title:"Once Human初心者攻略",
+description:"ゲーム開始直後にやること、序盤の進め方、基本システムを解説します。",
+category:"初心者攻略"
 },
 
 {
-name:"サンプルレーシング",
-description:"車種・コース・タイム攻略",
-articles:[
-"初心者おすすめ車種",
-"コース攻略"
-]
+title:"序盤おすすめ武器・装備",
+description:"序盤で使いやすい武器や装備についてまとめます。",
+category:"武器・ビルド"
 },
 
 {
-name:"サンプルアドベンチャー",
-description:"ストーリー・マップ・収集要素",
-articles:[
-"ストーリー攻略",
-"アイテム一覧"
-]
+title:"デビエーション攻略",
+description:"デビエーションの基本と入手方法をまとめます。",
+category:"デビエーション"
+},
+
+{
+title:"おすすめ拠点・建築攻略",
+description:"拠点作りや施設配置について解説します。",
+category:"建築・領地"
+},
+
+{
+title:"マップ探索攻略",
+description:"探索や素材集めに役立つ情報をまとめます。",
+category:"マップ・探索"
+},
+
+{
+title:"ボス攻略",
+description:"ボス戦で役立つ情報をまとめます。",
+category:"ボス・ダンジョン"
 }
 
 ];
 
-const gameList=document.getElementById("gameList");
-const articleList=document.getElementById("articleList");
-const detail=document.getElementById("detail");
 
-function showGames(list){
+const guideList =
+document.getElementById("guideList");
 
-gameList.innerHTML="";
+const detail =
+document.getElementById("detail");
 
-list.forEach((game,index)=>{
+
+function displayGuides(list){
+
+guideList.innerHTML="";
+
+list.forEach((guide,index)=>{
 
 const card=document.createElement("div");
+
 card.className="card";
 
 card.innerHTML=`
-<h3>🎮 ${game.name}</h3>
-<p>${game.description}</p>
-<button class="button" onclick="showGame(${index})">
-攻略を見る
+
+<h3>${guide.title}</h3>
+
+<p>${guide.description}</p>
+
+<span class="category">
+${guide.category}
+</span>
+
+<br><br>
+
+<button
+class="button"
+onclick="showGuide(${index})"
+>
+記事を見る
 </button>
+
 `;
 
-gameList.appendChild(card);
+guideList.appendChild(card);
 
 });
 
 }
 
-function showGame(index){
 
-const game=games[index];
+function showGuide(index){
+
+const guide=guides[index];
 
 detail.style.display="block";
 
 detail.innerHTML=`
-<h2>🎮 ${game.name}</h2>
-<p>${game.description}</p>
-<h3>攻略記事</h3>
-${game.articles.map(article=>`
-<div class="article">
-<h3>📖 ${article}</h3>
-<p>${game.name}の「${article}」攻略情報を掲載予定です。</p>
-</div>
-`).join("")}
-<br>
-<button class="button" onclick="closeDetail()">ゲーム一覧に戻る</button>
+
+<h2>${guide.title}</h2>
+
+<span class="category">
+${guide.category}
+</span>
+
+<p>
+現在この記事を作成中です。
+</p>
+
+<p>
+Once Human攻略ナビでは、
+初心者攻略、武器、デビエーション、
+建築、マップ、ボスなどの情報を
+順次追加していきます。
+</p>
+
+<button
+class="button"
+onclick="closeDetail()"
+>
+一覧に戻る
+</button>
+
 `;
 
-window.scrollTo({
-top:detail.offsetTop-20,
+detail.scrollIntoView({
 behavior:"smooth"
 });
 
 }
+
+
+function showCategory(category){
+
+const results=guides.filter(
+guide=>guide.category===category
+);
+
+displayGuides(results);
+
+document.getElementById("guides")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function searchGuides(){
+
+const keyword=
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+const results=guides.filter(guide=>
+
+guide.title
+.toLowerCase()
+.includes(keyword)
+
+||
+
+guide.description
+.toLowerCase()
+.includes(keyword)
+
+||
+
+guide.category
+.toLowerCase()
+.includes(keyword)
+
+);
+
+displayGuides(results);
+
+}
+
 
 function closeDetail(){
 
@@ -155,48 +606,22 @@ detail.style.display="none";
 
 }
 
-function searchGames(){
 
-const keyword=document.getElementById("search").value.toLowerCase();
+function goTop(){
 
-const result=games.filter(game=>
-game.name.toLowerCase().includes(keyword) ||
-game.description.toLowerCase().includes(keyword)
-);
-
-showGames(result);
-
-}
-
-function showArticles(){
-
-articleList.innerHTML="";
-
-games.forEach(game=>{
-
-game.articles.forEach(article=>{
-
-const item=document.createElement("div");
-
-item.className="article";
-
-item.innerHTML=`
-<h3>📖 ${article}</h3>
-<p>${game.name}の攻略記事</p>
-`;
-
-articleList.appendChild(item);
-
-});
-
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
 
 }
 
-showGames(games);
-showArticles();
+
+displayGuides(guides);
+
 
 </script>
+
 
 </body>
 </html>
