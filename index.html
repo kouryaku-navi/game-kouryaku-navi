@@ -2,21 +2,201 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAME攻略ナビ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans JP",sans-serif;background:#f5f7fb;color:#222}
+header{background:#202938;color:white;padding:22px 16px}
+.header-inner{max-width:1000px;margin:auto}
+header h1{margin:0 0 8px;font-size:28px}
+header p{margin:0;color:#cbd5e1}
+main{max-width:1000px;margin:30px auto;padding:0 16px}
+.search{background:white;padding:20px;border-radius:14px;margin-bottom:25px;box-shadow:0 2px 10px #00000010}
+.search input{width:100%;padding:14px;border:1px solid #ddd;border-radius:8px;font-size:16px}
+h2{margin-top:30px}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 10px #00000010}
+.card h3{margin-top:0;font-size:21px}
+.card p{color:#666}
+.button{display:inline-block;background:#2563eb;color:white;padding:10px 15px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.articles{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 10px #00000010}
+.article{padding:15px 0;border-bottom:1px solid #eee}
+.article:last-child{border-bottom:0}
+.article h3{margin:0 0 5px}
+.article p{margin:0;color:#666}
+#detail{display:none;background:white;border-radius:14px;padding:25px;box-shadow:0 2px 10px #00000010;margin-top:25px}
+footer{text-align:center;padding:35px 16px;color:#777}
+</style>
 </head>
+
 <body>
 
-<h1>GAME攻略ナビ</h1>
+<header>
+<div class="header-inner">
+<h1>🎮 GAME攻略ナビ</h1>
+<p>ゲーム攻略情報をわかりやすくまとめます</p>
+</div>
+</header>
 
-<p>ゲーム攻略情報をまとめるサイトです。</p>
+<main>
 
-<h2>ゲーム一覧</h2>
+<div class="search">
+<input id="search" type="text" placeholder="🔍 ゲーム名や攻略情報を検索..." oninput="searchGames()">
+</div>
 
-<ul>
-<li>サンプルRPG</li>
-<li>サンプルレーシング</li>
-<li>サンプルアドベンチャー</li>
-</ul>
+<h2>🎮 ゲーム一覧</h2>
+
+<div class="games" id="gameList"></div>
+
+<div id="detail"></div>
+
+<h2>🆕 最新攻略記事</h2>
+
+<div class="articles" id="articleList"></div>
+
+</main>
+
+<footer>
+GAME攻略ナビ
+</footer>
+
+<script>
+
+const games = [
+
+{
+name:"サンプルRPG",
+description:"攻略・ボス・装備・アイテム",
+articles:[
+"序盤の進め方",
+"ボス攻略",
+"おすすめ装備"
+]
+},
+
+{
+name:"サンプルレーシング",
+description:"車種・コース・タイム攻略",
+articles:[
+"初心者おすすめ車種",
+"コース攻略"
+]
+},
+
+{
+name:"サンプルアドベンチャー",
+description:"ストーリー・マップ・収集要素",
+articles:[
+"ストーリー攻略",
+"アイテム一覧"
+]
+}
+
+];
+
+const gameList=document.getElementById("gameList");
+const articleList=document.getElementById("articleList");
+const detail=document.getElementById("detail");
+
+function showGames(list){
+
+gameList.innerHTML="";
+
+list.forEach((game,index)=>{
+
+const card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<h3>🎮 ${game.name}</h3>
+<p>${game.description}</p>
+<button class="button" onclick="showGame(${index})">
+攻略を見る
+</button>
+`;
+
+gameList.appendChild(card);
+
+});
+
+}
+
+function showGame(index){
+
+const game=games[index];
+
+detail.style.display="block";
+
+detail.innerHTML=`
+<h2>🎮 ${game.name}</h2>
+<p>${game.description}</p>
+<h3>攻略記事</h3>
+${game.articles.map(article=>`
+<div class="article">
+<h3>📖 ${article}</h3>
+<p>${game.name}の「${article}」攻略情報を掲載予定です。</p>
+</div>
+`).join("")}
+<br>
+<button class="button" onclick="closeDetail()">ゲーム一覧に戻る</button>
+`;
+
+window.scrollTo({
+top:detail.offsetTop-20,
+behavior:"smooth"
+});
+
+}
+
+function closeDetail(){
+
+detail.style.display="none";
+
+}
+
+function searchGames(){
+
+const keyword=document.getElementById("search").value.toLowerCase();
+
+const result=games.filter(game=>
+game.name.toLowerCase().includes(keyword) ||
+game.description.toLowerCase().includes(keyword)
+);
+
+showGames(result);
+
+}
+
+function showArticles(){
+
+articleList.innerHTML="";
+
+games.forEach(game=>{
+
+game.articles.forEach(article=>{
+
+const item=document.createElement("div");
+
+item.className="article";
+
+item.innerHTML=`
+<h3>📖 ${article}</h3>
+<p>${game.name}の攻略記事</p>
+`;
+
+articleList.appendChild(item);
+
+});
+
+});
+
+}
+
+showGames(games);
+showArticles();
+
+</script>
 
 </body>
 </html>
